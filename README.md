@@ -1,6 +1,8 @@
 # ASL3-RF-System-Updater
 A safe, RF-controlled system updater for AllStarLink 3 nodes running Debian 12 or Debian 13. Check for available updates, hear the update count through TTS, and approve or cancel the upgrade using separate DTMF commands.
 <br>
+- [Installation](##installation)
+<br>
 # ASL3 RF System Updater
 
 A safe, interactive, RF-controlled system updater for **AllStarLink 3 nodes running Debian 12 or Debian 13**.
