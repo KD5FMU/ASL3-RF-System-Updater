@@ -184,17 +184,7 @@ A new update check must then be started with the check command.
 
 ## Installation
 
-### Step 1: Download the installer
-
-Download:
-
-```text
-sudo wget https://raw.githubusercontent.com/KD5FMU/ASL3-RF-System-Updater/refs/heads/main/install-asl3-rf-system-updater-v2.sh
-```
-
-You may download it directly from the GitHub repository or copy it to the ASL3 node using SCP, SFTP, a USB drive, or another file-transfer method.
-
-### Step 2: Open a terminal on the node
+### Step 1: Open a terminal on the node
 
 Connect to the ASL3 node using SSH or open a local terminal.
 
@@ -205,6 +195,16 @@ For example:
 ```bash
 cd ~
 ```
+
+### Step 2: Download the installer
+
+Download:
+
+```text
+sudo wget https://raw.githubusercontent.com/KD5FMU/ASL3-RF-System-Updater/refs/heads/main/install-asl3-rf-system-updater-v2.sh
+```
+
+You may download it directly from the GitHub repository or copy it to the ASL3 node using SCP, SFTP, a USB drive, or another file-transfer method.
 
 ### Step 3: Make the installer executable
 
