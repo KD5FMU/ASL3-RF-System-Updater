@@ -189,7 +189,7 @@ A new update check must then be started with the check command.
 Download:
 
 ```text
-install-asl3-rf-system-updater-v2.sh
+sudo wget https://raw.githubusercontent.com/KD5FMU/ASL3-RF-System-Updater/refs/heads/main/install-asl3-rf-system-updater-v2.sh
 ```
 
 You may download it directly from the GitHub repository or copy it to the ASL3 node using SCP, SFTP, a USB drive, or another file-transfer method.
