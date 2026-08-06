@@ -229,7 +229,7 @@ You may download it directly from the GitHub repository or copy it to the ASL3 n
 Run:
 
 ```bash
-chmod +x install-asl3-rf-system-updater-v2.sh
+sudo chmod +x install-asl3-rf-system-updater-v2.sh
 ```
 
 ### Step 4: Run the installer
