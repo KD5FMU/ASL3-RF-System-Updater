@@ -9,7 +9,7 @@
 #   *<CANCEL>  Cancel pending upgrade
 #
 # Example:
-#   *894 Check
+#   *897 Check
 #   *895 Approve
 #   *896 Cancel
 #
@@ -112,8 +112,8 @@ prompt_settings() {
     [[ "$NODE_NUMBER" =~ ^[0-9]{3,10}$ ]] ||
         die "The node number must contain digits only."
 
-    read -r -p "DTMF command to CHECK for updates [894]: " CHECK_DTMF
-    CHECK_DTMF="${CHECK_DTMF:-894}"
+    read -r -p "DTMF command to CHECK for updates [897]: " CHECK_DTMF
+    CHECK_DTMF="${CHECK_DTMF:-897}"
 
     read -r -p "DTMF command to APPROVE upgrade [895]: " APPROVE_DTMF
     APPROVE_DTMF="${APPROVE_DTMF:-895}"

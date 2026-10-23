@@ -66,29 +66,31 @@ This project is not intended for HamVoIP or older ASL installations that do not 
 The installer suggests the following default commands:
 
 ```text
-*894  Check for available updates
+*897  Check for available updates
 *895  Approve and install updates
 *896  Cancel the pending upgrade
 ```
 
 The commands can be changed during installation.
 
+The default check command is now `*897`. Existing installations keep their configured commands; updating the installer file does not change an installed node. Use the command configured in your node's `rpt.conf`.
+
 Each command must be independent. One command cannot be the beginning or prefix of another command.
 
 For example, this configuration must not be used:
 
 ```text
-894
-894A
-894B
+897
+897A
+897B
 ```
 
-In `app_rpt`, the command `894` may execute as soon as those three digits are received. Asterisk may therefore run the check command before the final `A` or `B` is entered.
+In `app_rpt`, the command `897` may execute as soon as those three digits are received. Asterisk may therefore run the check command before the final `A` or `B` is entered.
 
 The corrected design uses separate commands:
 
 ```text
-894
+897
 895
 896
 ```
@@ -100,7 +102,7 @@ The corrected design uses separate commands:
 The operator sends the check command over RF:
 
 ```text
-*894
+*897
 ```
 
 The node announces:
@@ -267,7 +269,7 @@ The installer asks for three separate commands.
 Example:
 
 ```text
-DTMF command to CHECK for updates [894]:
+DTMF command to CHECK for updates [897]:
 DTMF command to APPROVE upgrade [895]:
 DTMF command to CANCEL upgrade [896]:
 ```
@@ -308,7 +310,7 @@ Example:
 
 ```text
 RF commands:
-  *894  Check for updates
+  *897  Check for updates
   *895  Approve and install
   *896  Cancel
   Timeout: 120 seconds
@@ -366,7 +368,7 @@ Example:
 
 ```bash
 NODE_NUMBER="577883"
-CHECK_DTMF="894"
+CHECK_DTMF="897"
 APPROVE_DTMF="895"
 CANCEL_DTMF="896"
 CONFIRM_TIMEOUT="120"
@@ -436,7 +438,7 @@ It then adds entries similar to:
 
 ```ini
 ; ASL3 RF system updater
-894=cmd,/usr/local/sbin/asl3-rf-update-check
+897=cmd,/usr/local/sbin/asl3-rf-update-check
 895=cmd,/usr/local/sbin/asl3-rf-update-approve
 896=cmd,/usr/local/sbin/asl3-rf-update-cancel
 ```
@@ -446,8 +448,8 @@ The leading `*` is not entered in the function number inside `rpt.conf`. The ope
 For example:
 
 ```text
-rpt.conf entry: 894
-RF entry:        *894
+rpt.conf entry: 897
+RF entry:        *897
 ```
 
 ### Backs up rpt.conf
@@ -594,7 +596,7 @@ Operators should still review the log after an upgrade, especially when major De
 Send over RF:
 
 ```text
-*894
+*897
 ```
 
 You should hear:
@@ -620,7 +622,7 @@ You should hear:
 Run the check again:
 
 ```text
-*894
+*897
 ```
 
 After hearing the update count, send:
@@ -660,15 +662,15 @@ This normally indicates overlapping DTMF commands.
 Do not configure commands such as:
 
 ```text
-894
-894A
-894B
+897
+897A
+897B
 ```
 
 Use independent commands such as:
 
 ```text
-894
+897
 895
 896
 ```
